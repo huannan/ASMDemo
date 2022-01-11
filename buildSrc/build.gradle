@@ -1,0 +1,37 @@
+apply plugin: 'kotlin'
+apply plugin: 'java-gradle-plugin'
+
+buildscript {
+    apply from: '../config.gradle'
+    repositories {
+        addRepos(repositories)
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${build_versions.kotlin}"
+    }
+}
+
+repositories {
+    addRepos(repositories)
+}
+
+dependencies {
+    implementation(gradleApi())
+    implementation(localGroovy())
+    implementation("org.ow2.asm:asm:$build_versions.asm")
+    implementation("org.ow2.asm:asm-commons:$build_versions.asm")
+    implementation("com.android.tools.build:gradle:$build_versions.android_gradle_plugin")
+    // Kotlin
+    implementation("org.jetbrains.kotlin:kotlin-stdlib:${build_versions.kotlin}")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:${build_versions.kotlin}")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:${build_versions.kotlin}")
+}
+
+gradlePlugin {
+    plugins {
+        create("ASMPlugin") {
+            id = 'asm-plugin'
+            implementationClass = 'com.nan.asmplugin.ASMPlugin'
+        }
+    }
+}
