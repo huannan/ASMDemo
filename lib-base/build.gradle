@@ -37,7 +37,7 @@ dependencies {
     // 测试
     testImplementation("junit:junit:${versions.junit}")
     androidTestImplementation("androidx.test.ext:junit:${versions.androidx_junit}")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
+    androidTestImplementation("androidx.test.espresso:espresso-core:${versions.androidx_espresso}")
 
     // Kotlin
     api("org.jetbrains.kotlin:kotlin-stdlib:${build_versions.kotlin}")

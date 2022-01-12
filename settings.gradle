@@ -1,3 +1,4 @@
 rootProject.name = "ASMDemo"
+includeBuild("ASMPlugin")
 include ':app'
 include ':lib-base'

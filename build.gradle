@@ -5,8 +5,12 @@ buildscript {
     }
     dependencies {
         classpath "com.android.tools.build:gradle:$build_versions.android_gradle_plugin"
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.10"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$build_versions.kotlin"
     }
+}
+
+plugins {
+    id "asm-plugin" apply false
 }
 
 allprojects {
